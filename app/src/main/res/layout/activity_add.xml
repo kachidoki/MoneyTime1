@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.kachidoki.me.moneytime10.widget.ColorPicker
+        android:id="@+id/colorPicker"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+    </com.kachidoki.me.moneytime10.widget.ColorPicker>
+
+    <TextView
+        android:id="@+id/calenderTime"
+        android:text="2015年\n8月18日"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.kachidoki.me.moneytime10.widget.TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp">
+
+    </com.kachidoki.me.moneytime10.widget.TimePicker>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="你做了什么"
+        android:id="@+id/doSomething"/>
+
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/addButton"
+        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#1E88E5"
+
+        android:text="添加事件" />
+
+
+</LinearLayout>

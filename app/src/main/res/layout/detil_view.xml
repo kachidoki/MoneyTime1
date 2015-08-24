@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_toLeftOf="@+id/Linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/starttimeDetil"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:text="6:00"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="—"/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/endtimeDetil"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:text="8:00"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear1"
+        android:gravity="center"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:background="@color/White">
+            <ImageView
+                android:id="@+id/colorDetil"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/icon_round_blue"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_toRightOf="@+id/Linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/describeDetil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="吃饭睡觉"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+</RelativeLayout>

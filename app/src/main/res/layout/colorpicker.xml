@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_marginLeft="25dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:background="@color/Yellow"
+        android:id="@+id/yellow"
+        android:textSize="10dp"
+        android:textColor="@color/White"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:background="@color/Orange"
+        android:id="@+id/orange"
+        android:textSize="10dp"
+        android:textColor="@color/White"
+        android:gravity="center"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:background="@color/Green"
+        android:id="@+id/green"
+        android:textSize="10dp"
+        android:textColor="@color/White"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:background="@color/Blue"
+        android:id="@+id/blue"
+        android:textSize="10dp"
+        android:textColor="@color/White"
+        android:gravity="center"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:background="@color/Red"
+        android:id="@+id/red"
+        android:textSize="10dp"
+        android:textColor="@color/White"
+        android:gravity="center"/>
+
+</LinearLayout>

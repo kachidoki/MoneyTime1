@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/DeepPurple</color>
+    <color name="colorPrimaryDark">@color/DeepPurple900</color>
+    <color name="colorAccent">@color/Orange</color>
+
+
+    <color name="Red">#dcff4444</color>
+    <color name="Green">#dc009688</color>
+    <color name="Yellow">#dcffc107</color>
+    <color name="Orange">#dcff5722</color>
+    <color name="Blue">#dc2196f3</color>
+
+    <color name="pink">#ff69b4</color>
+    <color name="DeepPurple900">#2579a4</color>
+    <color name="DeepPurple">#4086aa</color>
+    <color name="White">#fff</color>
+
+    <color name="Gray">#888888</color>
+    <color name="Gray100">#dddddd</color>
+    <color name="Gray600">#999999</color>
+
+</resources>
