@@ -34,7 +34,7 @@ public class FirstActivity extends AppCompatActivity implements UmengUpdateListe
 
         UmengUpdateAgent.update(FirstActivity.this);
         UpdateConfig.setDebug(true);
-        skipActivity(1);
+        skipActivity(2);
     }
 
     /**

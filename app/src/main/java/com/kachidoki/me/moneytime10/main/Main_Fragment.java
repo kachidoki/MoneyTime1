@@ -44,7 +44,7 @@ public class Main_Fragment extends Fragment {
     private ButtonFloat add;
     private int Year=0,Month=0,Day=0,WeekOfYear=0,WeekDay=0;
     final Calendar currentTime = Calendar.getInstance();
-
+    private TextView tv_day,tv_year,tv_month,tv_weekday;
 
 
     @Nullable
@@ -56,9 +56,14 @@ public class Main_Fragment extends Fragment {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         add = (ButtonFloat) view.findViewById(R.id.add);
         easyRecyclerView = (EasyRecyclerView) view.findViewById(R.id.MyRecyclerview);
+        tv_day = (TextView) view.findViewById(R.id.DayTV);
+        tv_month = (TextView) view.findViewById(R.id.MonthTV);
+        tv_weekday = (TextView) view.findViewById(R.id.weekDayTV);
+        tv_year = (TextView) view.findViewById(R.id.YearTV);
         InitRecyclerView();
 
         SetChinaTime(currentTime);
+        setTextviewTime();
         InitAdapther();
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,5 +126,30 @@ public class Main_Fragment extends Fragment {
         WeekOfYear = cal.get(Calendar.WEEK_OF_YEAR);
     }
 
+    public void setTextviewTime(){
+        tv_year.setText(Year+"");
+        tv_day.setText(Day+"");
+        tv_month.setText(Month+"");
+        if (Month == 1) tv_month.setText("January ");
+        if (Month == 2) tv_month.setText("February");
+        if (Month == 3) tv_month.setText("March   ");
+        if (Month == 4) tv_month.setText("April   ");
+        if (Month == 5) tv_month.setText("May     ");
+        if (Month == 6) tv_month.setText("June    ");
+        if (Month == 7) tv_month.setText("July    ");
+        if (Month == 8) tv_month.setText("August  ");
+        if (Month == 9) tv_month.setText("September");
+        if (Month == 10) tv_month.setText("October ");
+        if (Month == 11) tv_month.setText("November");
+        if (Month == 12) tv_month.setText("December");
+        if (WeekDay == 2) tv_weekday.setText("Monday   ");
+        if (WeekDay == 3) tv_weekday.setText("Tuesday  ");
+        if (WeekDay == 4) tv_weekday.setText("Wednesday");
+        if (WeekDay == 5) tv_weekday.setText("Thursday ");
+        if (WeekDay == 6) tv_weekday.setText("Friday   ");
+        if (WeekDay == 7) tv_weekday.setText("Saturday ");
+        if (WeekDay == 1) tv_weekday.setText("Sunday   ");
+        Log.i("day",WeekDay+"");
+    }
 
 }

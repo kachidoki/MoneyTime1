@@ -59,14 +59,45 @@
             materialdesign:iconDrawable="@drawable/icon_add" />
 
         <TextView
+            android:id="@+id/weekDayTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Wednesday"
+            android:textStyle="bold"
             android:textColor="@color/White"
             android:textSize="30dp"
             android:layout_marginTop="50dp"/>
-
+        <TextView
+            android:id="@+id/MonthTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="20dp"
+            android:text="Auguest"
+            android:textColor="@color/White"
+            android:textSize="23dp"
+            android:layout_marginTop="90dp"/>
+        <TextView
+            android:id="@+id/YearTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="50dp"
+            android:text="2015"
+            android:textColor="@color/Gray"
+            android:textSize="15dp"
+            android:layout_marginTop="98dp"/>
+        <TextView
+            android:id="@+id/DayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="120dp"
+            android:text="24"
+            android:textColor="@color/White"
+            android:textSize="88dp"
+            android:layout_marginTop="30dp"/>
 
     </FrameLayout>
 </LinearLayout>

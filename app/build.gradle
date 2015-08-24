@@ -25,6 +25,7 @@ dependencies {
     compile 'com.jude:easyrecyclerview:1.0.3'
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.afollestad:material-dialogs:0.7.8.1'
     compile project(':MPChartLib')
     compile project(':umeng')
 }

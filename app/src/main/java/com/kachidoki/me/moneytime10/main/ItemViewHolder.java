@@ -2,6 +2,7 @@ package com.kachidoki.me.moneytime10.main;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.kachidoki.me.moneytime10.R;
+import com.kachidoki.me.moneytime10.model.ItemModel;
 import com.kachidoki.me.moneytime10.model.bean.ItemBean;
+import com.kachidoki.me.moneytime10.util.MyDatebaseHelper;
 import com.kachidoki.me.moneytime10.util.PopupWindowsUtils;
 import com.kachidoki.me.moneytime10.util.Position;
 import com.kachidoki.me.moneytime10.util.Util;
@@ -46,34 +50,32 @@ public class ItemViewHolder extends BaseViewHolder<ItemBean> {
 
 
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AnimatorSet animSet = new AnimatorSet();
-                    ObjectAnimator animator1 = ObjectAnimator.ofFloat(jinzhi, "translationX", 0F, -100F);
-                    ObjectAnimator animator2 = ObjectAnimator.ofFloat(jinzhi, "alpha", 0f, 1f);
-                    animSet.setInterpolator(new LinearInterpolator());
-                    animSet.playTogether(animator1, animator2);
-                    animSet.setDuration(1000);
-
-                    if (getLayoutPosition() == Position.getInstance().getPostion()) {
-                        itemView.animate().cancel();
-                        setData(item);
-                    } else {
-                        if (Position.getInstance().getPostion() == -1) {
-                            animSet.start();
-                            Position.getInstance().setPostion(getLayoutPosition());
-                        } else {
-                            animSet.cancel();
-                            setData(item);
-                            animSet.start();
-                            Position.getInstance().setPostion(getLayoutPosition());
-                        }
-
-                    }
-                    Log.i("viewHolder", Position.getInstance().getPostion() + "");
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    AnimatorSet animSet = new AnimatorSet();
+//                    ObjectAnimator animator1 = ObjectAnimator.ofFloat(jinzhi, "translationX", 0F, -100F);
+//                    ObjectAnimator animator2 = ObjectAnimator.ofFloat(jinzhi, "alpha", 0f, 1f);
+//                    animSet.setInterpolator(new LinearInterpolator());
+//                    animSet.playTogether(animator1, animator2);
+//                    animSet.setDuration(1000);
+//
+//                    if (getLayoutPosition() == Position.getInstance().getPostion()) {
+//                        animSet.cancel();
+//                    } else {
+//                        if (Position.getInstance().getPostion() == -1) {
+//                            animSet.start();
+//                            Position.getInstance().setPostion(getLayoutPosition());
+//                        } else {
+//                            animSet.cancel();
+//                            setData(item);
+//                            Position.getInstance().setPostion(getLayoutPosition());
+//                        }
+//
+//                    }
+//                    Log.i("viewHolder", Position.getInstance().getPostion() + "");
+//                }
+//            });
 
 
 

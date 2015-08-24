@@ -145,4 +145,8 @@ public class ItemModel {
         return itemBeans;
     }
 
+    public void delete (SQLiteDatabase db,int year,int month,int day,float startTime,float endTime){
+        db.delete("Item","year="+year+" AND day="+day+" AND startTime="+startTime+" AND endTime="+endTime,null);
+    }
+
 }
