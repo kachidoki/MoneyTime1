@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -93,31 +94,36 @@ public class Table extends FrameLayout {
         Log.i("Table","datasize:"+data.size());
         for(int i=0;i<data.size();i++){
             Log.i("test",data.get(i).getDescribe());
+            LinearLayout linearLayout = new LinearLayout(getContext());
             TextView textView=new TextView(getContext());
             int a = (int) (data.get(i).getEndTime() - data.get(i).getStartTime()-2);
-            textView.setLayoutParams(new ViewGroup.LayoutParams(148, a));
+            linearLayout.setLayoutParams(new ViewGroup.LayoutParams(148, a));
+            textView.setLayoutParams(new ViewGroup.LayoutParams(130, Util.dip2px(getContext(),120)));
 //            if(data.get(i).getColor().equals("red")) textView.setBackgroundResource(R.layout.red_background);
 //            if(data.get(i).getColor().equals("green")) textView.setBackgroundResource(R.layout.green_background);
 //            if(data.get(i).getColor().equals("blue")) textView.setBackgroundResource(R.layout.blue_background);
 //            if(data.get(i).getColor().equals("orange")) textView.setBackgroundResource(R.layout.orange_background);
 //            if(data.get(i).getColor().equals("yellow")) textView.setBackgroundResource(R.layout.yellow_background);
-            if(data.get(i).getColor().equals("red")) textView.setBackgroundColor(getResources().getColor(R.color.Red));
-            if(data.get(i).getColor().equals("green")) textView.setBackgroundColor(getResources().getColor(R.color.Green));
-            if(data.get(i).getColor().equals("blue")) textView.setBackgroundColor(getResources().getColor(R.color.Blue));
-            if(data.get(i).getColor().equals("orange")) textView.setBackgroundColor(getResources().getColor(R.color.Orange));
-            if(data.get(i).getColor().equals("yellow")) textView.setBackgroundColor(getResources().getColor(R.color.Yellow));
-            textView.getBackground().setAlpha(220);
+            if(data.get(i).getColor().equals("red")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Red));
+            if(data.get(i).getColor().equals("green")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Green));
+            if(data.get(i).getColor().equals("blue")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Blue));
+            if(data.get(i).getColor().equals("orange")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Orange));
+            if(data.get(i).getColor().equals("yellow")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Yellow));
+            linearLayout.getBackground().setAlpha(220);
             textView.setText(data.get(i).getDescribe());
+            linearLayout.setGravity(Gravity.CENTER);
             Log.i("Table", data.get(i).getDescribe() + "   ");
             textView.setTextColor(getResources().getColor(R.color.White));
             textView.setTextSize(12);
-            Log.i("Table",textView.getGravity() + "gravity---------");
-            textView.setGravity(Gravity.CENTER_HORIZONTAL);
-            textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            textView.setMaxEms(3);
+            Log.i("Table", textView.getGravity() + "gravity---------");
+            textView.setGravity(Gravity.CENTER);
+//            textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
 
 //            textView.setBackgroundColor(getResources().getColor(White));
-            addView(textView);
+            addView(linearLayout);
+            linearLayout.addView(textView);
         }
 
     }

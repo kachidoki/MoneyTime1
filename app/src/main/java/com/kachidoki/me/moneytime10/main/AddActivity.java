@@ -22,6 +22,7 @@ import com.kachidoki.me.moneytime10.util.Util;
 import com.kachidoki.me.moneytime10.widget.ColorPicker;
 import com.kachidoki.me.moneytime10.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -84,14 +85,19 @@ public class AddActivity extends AppCompatActivity {
                     if (timePicker.startTime()==timePicker.endTime()){
                         Util.Toast(AddActivity.this, "请选择时间段");
                     }else {
-                        if (describe.getText().toString()==""){
-                            Util.Toast(AddActivity.this, "请添加内容");
+                        if(isDouble()==true){
+                            Util.Toast(AddActivity.this,"这段时间已经被利用了哦");
                         }else {
-                            SQLiteDatabase db = MyDatebaseHelper.getInstance(AddActivity.this).getWritableDatabase();
-                            ItemModel.getInstance().InsertItem(db, Year, Month, Day, WeekDay, WeekOfYear, timePicker.startTime(), timePicker.endTime(), describe.getText().toString(), colorPicker.pickColor());
-                            Util.Toast(AddActivity.this, "添加成功");
-                            finish();
+                            if (describe.getText().toString().equals("")){
+                                Util.Toast(AddActivity.this, "请添加内容");
+                            }else {
+                                SQLiteDatabase db = MyDatebaseHelper.getInstance(AddActivity.this).getWritableDatabase();
+                                ItemModel.getInstance().InsertItem(db, Year, Month, Day, WeekDay, WeekOfYear, timePicker.startTime(), timePicker.endTime(), describe.getText().toString(), colorPicker.pickColor());
+                                Util.Toast(AddActivity.this, "添加成功");
+                                finish();
+                            }
                         }
+
                     }
                 }
             }
@@ -100,6 +106,19 @@ public class AddActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public Boolean isDouble(){
+        Boolean isdouble = false;
+        SQLiteDatabase db = MyDatebaseHelper.getInstance(AddActivity.this).getReadableDatabase();
+        ArrayList<ItemBean> itemBeans = ItemModel.getInstance().QueryTodayItem(db,Day,Month,Year);
+        for (int i=0;i<itemBeans.size();i++){
+            if((timePicker.startTime()<itemBeans.get(i).getEndTime()&&timePicker.startTime()>=itemBeans.get(i).getStartTime())||(timePicker.endTime()<itemBeans.get(i).getStartTime()&&timePicker.endTime()>=itemBeans.get(i).getEndTime())||(timePicker.startTime()<=itemBeans.get(i).getStartTime()&&timePicker.endTime()>=itemBeans.get(i).getEndTime())){
+                isdouble=true;
+                break;
+            }
+        }
+        return isdouble;
     }
 
 
