@@ -145,6 +145,46 @@ public class ItemModel {
         return itemBeans;
     }
 
+    public ArrayList<ItemBean> MainQueryTodayItem(SQLiteDatabase db,int Day,int Month,int Year){
+        ArrayList<ItemBean> itemBeans = new ArrayList<>();
+
+
+            Cursor cursor = db.query("Item", null, "day="+(Day)+" AND year="+Year+" AND month="+Month, null, null, null,"startTime");
+            if (cursor.moveToFirst()) {
+                do {
+                    String describe = cursor.getString(cursor.getColumnIndex("describe"));
+                    float startTime = cursor.getFloat(cursor.getColumnIndex("startTime"));
+                    float endTime = cursor.getFloat(cursor.getColumnIndex("endTime"));
+                    String color = cursor.getString(cursor.getColumnIndex("color"));
+                    int weekDay = cursor.getInt(cursor.getColumnIndex("weekDay"));
+                    int year = cursor.getInt(cursor.getColumnIndex("year"));
+                    int month = cursor.getInt(cursor.getColumnIndex("month"));
+                    int day = cursor.getInt(cursor.getColumnIndex("day"));
+                    int weekOfYear = cursor.getInt(cursor.getColumnIndex("weekOfYear"));
+                    if (itemBeans.size()==0){
+                        itemBeans.add(new ItemBean(year,month,day,weekDay,0,0, 0,"","black"));
+                        itemBeans.add(new ItemBean(year,month,day,weekDay,weekOfYear,startTime, endTime,describe,color));
+                    }else {
+                        if(day!=itemBeans.get(itemBeans.size()-1).getDay()||month!=itemBeans.get(itemBeans.size()-1).getMonth()){
+                            itemBeans.add(new ItemBean(year,month,day,weekDay,0,0, 0,"","black"));
+                            itemBeans.add(new ItemBean(year,month,day,weekDay,weekOfYear,startTime, endTime,describe,color));
+                        }else {
+                            itemBeans.add(new ItemBean(year,month,day,weekDay,weekOfYear,startTime, endTime,describe,color));
+                        }
+                    }
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+
+
+
+
+
+
+        return itemBeans;
+    }
+
+
     public void delete (SQLiteDatabase db,int year,int month,int day,float startTime,float endTime){
         db.delete("Item","year="+year+" AND day="+day+" AND startTime="+startTime+" AND endTime="+endTime,null);
     }

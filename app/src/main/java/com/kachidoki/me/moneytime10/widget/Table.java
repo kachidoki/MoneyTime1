@@ -61,7 +61,7 @@ public class Table extends FrameLayout {
 //            left=getChildAt(i).getMeasuredWidth()+(x*width);
 //            top=getChildAt(i).getMeasuredHeight()+(y*height);
             left = (data.get(i).getWeekDay()-1)*width;
-            right=left+width;
+            right=left+width-2;
             top = (int) ((data.get(i).getStartTime()-7)*height);
             bottom= (int) (top+(data.get(i).getEndTime()-data.get(i).getStartTime())*height-2);
             getChildAt(i).layout(left, top, right, bottom);
@@ -94,7 +94,8 @@ public class Table extends FrameLayout {
         for(int i=0;i<data.size();i++){
             Log.i("test",data.get(i).getDescribe());
             TextView textView=new TextView(getContext());
-            textView.setLayoutParams(new ViewGroup.LayoutParams(150, (int) (data.get(i).getEndTime() - data.get(i).getStartTime()-2)));
+            int a = (int) (data.get(i).getEndTime() - data.get(i).getStartTime()-2);
+            textView.setLayoutParams(new ViewGroup.LayoutParams(148, a));
 //            if(data.get(i).getColor().equals("red")) textView.setBackgroundResource(R.layout.red_background);
 //            if(data.get(i).getColor().equals("green")) textView.setBackgroundResource(R.layout.green_background);
 //            if(data.get(i).getColor().equals("blue")) textView.setBackgroundResource(R.layout.blue_background);
@@ -105,12 +106,13 @@ public class Table extends FrameLayout {
             if(data.get(i).getColor().equals("blue")) textView.setBackgroundColor(getResources().getColor(R.color.Blue));
             if(data.get(i).getColor().equals("orange")) textView.setBackgroundColor(getResources().getColor(R.color.Orange));
             if(data.get(i).getColor().equals("yellow")) textView.setBackgroundColor(getResources().getColor(R.color.Yellow));
-//            textView.getBackground().setAlpha(220);
+            textView.getBackground().setAlpha(220);
             textView.setText(data.get(i).getDescribe());
-            Log.i("Table",data.get(i).getDescribe()+"   ");
+            Log.i("Table", data.get(i).getDescribe() + "   ");
             textView.setTextColor(getResources().getColor(R.color.White));
-            textView.setTextSize(10);
-//            textView.setGravity(Gravity.CENTER);
+            textView.setTextSize(12);
+            Log.i("Table",textView.getGravity() + "gravity---------");
+            textView.setGravity(Gravity.CENTER_HORIZONTAL);
             textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
 

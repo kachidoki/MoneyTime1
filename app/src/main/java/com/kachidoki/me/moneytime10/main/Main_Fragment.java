@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
+import com.gc.materialdesign.widgets.SnackBar;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.kachidoki.me.moneytime10.R;
 import com.kachidoki.me.moneytime10.model.ItemModel;
@@ -104,6 +105,24 @@ public class Main_Fragment extends Fragment {
         ArrayList<ItemBean> itemBeans = ItemModel.getInstance().MainQueryItem(db, WeekOfYear, Year);
         Collections.reverse(itemBeans);
         itemAdapter.addAll(itemBeans);
+        if (itemBeans.size()==0){
+            SnackBar snackBar = new SnackBar(getActivity(), "本周还没有任何记录，赶快添加吧", "添加", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), AddActivity.class));
+                }
+            });
+            snackBar.show();
+        }
+
+//        SQLiteDatabase db = MyDatebaseHelper.getInstance(getActivity()).getReadableDatabase();
+//        ArrayList<ItemBean> itemBeans = ItemModel.getInstance().MainQueryTodayItem(db,Day,Month,Year);
+//        Collections.reverse(itemBeans);
+//        itemAdapter.addAll(itemBeans);
+
+
+
+
 //        itemAdapter.add(new ItemBean(2015,8,17,5,35,8,9,"看书写代码","blue"));
 //        itemAdapter.add(new ItemBean(2015, 8, 17, 5, 35, 9, 10, "看书写代码", "red"));
 //        itemAdapter.add(new ItemBean(2015, 8, 17, 5, 35, 11, 12, "看书写代码", "orange"));

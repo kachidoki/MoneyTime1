@@ -26,11 +26,19 @@
         android:gravity="center"
         android:layout_gravity="center_horizontal"/>
 
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="选择时间段:"
+        android:textColor="@color/Gray"/>
+
     <com.kachidoki.me.moneytime10.widget.TimePicker
         android:id="@+id/timePicker"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp">
 
     </com.kachidoki.me.moneytime10.widget.TimePicker>
 

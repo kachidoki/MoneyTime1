@@ -4,6 +4,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,7 @@ public class ItemAdapter extends RecyclerArrayAdapter<ItemBean> {
                                             @Override
                                             public void onPositive(MaterialDialog dialog) {
                                                 SQLiteDatabase db = MyDatebaseHelper.getInstance(getContext()).getReadableDatabase();
-                                                ItemModel.getInstance().delete(db, getItem(position).getYear(), getItem(position).getMonth(), getItem(position).getDay(),getItem(position).getStartTime(), getItem(position).getEndTime());
+                                                ItemModel.getInstance().delete(db, getItem(position).getYear(), getItem(position).getMonth(), getItem(position).getDay(), getItem(position).getStartTime(), getItem(position).getEndTime());
                                                 remove(getItem(position));
                                                 Util.Toast(getContext(), "删除成功");
 

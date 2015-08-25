@@ -125,7 +125,7 @@ public class Chart_Fragment extends Fragment {
         yValues.add(new Entry(quarterly2,1));
         yValues.add(new Entry(quarterly3,2));
         yValues.add(new Entry(quarterly4,3));
-        yValues.add(new Entry(quarterly5, 4));
+        yValues.add(new Entry(quarterly5,4));
 
         //y轴的集合
         PieDataSet pieDataSet = new PieDataSet(yValues,"");

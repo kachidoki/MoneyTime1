@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gc.materialdesign.widgets.SnackBar;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -66,7 +67,7 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
         showChart();
     }
 
-    private void showChart(){
+    public void showChart(){
         //使用百分比
         mChart.setUsePercentValues(true);
         //描述
@@ -115,10 +116,14 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
 
     }
 
-    private void setData() {
-
+    public void setData() {
+        ArrayList<String> xVals = new ArrayList<>();
         ArrayList<Entry> yValues = new ArrayList<>();
-
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.clear();
+        yValues.clear();
+        xVals.clear();
+        colorIntent.clear();
         ArrayList<ItemBean> itemBeans = getToday(currentTime);
 
         float quarterly1 = 0;
@@ -165,7 +170,7 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
 
 
 
-        ArrayList<String> xVals = new ArrayList<>();
+
         if(quarterlys[0]!=0.0) xVals.add("高效");
         if(quarterlys[1]!=0.0) xVals.add("不专心");
         if(quarterlys[2]!=0.0) xVals.add("休息");
@@ -180,12 +185,12 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
 
         // add a lot of colors
 
-        ArrayList<Integer> colors = new ArrayList<>();
-        if(quarterlys[0]!=0.0) colors.add(Color.rgb(255, 193, 7));
-        if(quarterlys[1]!=0.0) colors.add(Color.rgb(255, 87, 34));
-        if(quarterlys[2]!=0.0) colors.add(Color.rgb(0, 150, 136));
-        if(quarterlys[3]!=0.0) colors.add(Color.rgb(33, 150, 243));
-        if(quarterlys[4]!=0.0) colors.add(Color.rgb(255, 68, 68));
+
+        if(quarterlys[0]!=0.0) colors.add(Color.argb(220,255, 193, 7));
+        if(quarterlys[1]!=0.0) colors.add(Color.argb(220,255, 87, 34));
+        if(quarterlys[2]!=0.0) colors.add(Color.argb(220,0, 150, 136));
+        if(quarterlys[3]!=0.0) colors.add(Color.argb(220,33, 150, 243));
+        if(quarterlys[4]!=0.0) colors.add(Color.argb(220,255, 68, 68));
 
         dataSet.setColors(colors);
 
@@ -208,9 +213,9 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
         if (e == null) return;
         if (e!=null){
             Intent intent = new Intent(getActivity(),DetilActivity.class);
-            intent.putExtra("color",colorIntent.get(e.getXIndex()));
+            intent.putExtra("color", colorIntent.get(e.getXIndex()));
             startActivity(intent);
-            Log.i("Chart",colorIntent.get(e.getXIndex()));
+            Log.i("Chart", colorIntent.get(e.getXIndex()));
         }
     }
 
@@ -227,6 +232,10 @@ public class Mchart_Fragment extends Fragment implements OnChartValueSelectedLis
         Date date = new GregorianCalendar(c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH)).getTime();
         cal.setTime(date);
         return ItemModel.getInstance().QueryTodayItem(db,cal.get(Calendar.DAY_OF_MONTH),cal.get(Calendar.MONTH)+1,cal.get(Calendar.YEAR));
+    }
+
+    public void dateChange(){
+        showChart();
     }
 
 }
