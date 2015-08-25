@@ -32,7 +32,7 @@ public class FirstActivity extends AppCompatActivity implements UmengUpdateListe
         window.setFlags(flag, flag);
         setContentView(R.layout.activity_first);
 
-        UmengUpdateAgent.update(FirstActivity.this);
+
         UpdateConfig.setDebug(true);
         skipActivity(2);
     }

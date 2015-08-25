@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.kachidoki.me.moneytime10.R;
+import com.umeng.update.UmengUpdateAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("life", "main_activity is on create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        UmengUpdateAgent.update(MainActivity.this);
         InitViewPager();
     }
 

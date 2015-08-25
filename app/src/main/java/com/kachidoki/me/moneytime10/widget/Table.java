@@ -109,7 +109,7 @@ public class Table extends FrameLayout {
             if(data.get(i).getColor().equals("blue")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Blue));
             if(data.get(i).getColor().equals("orange")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Orange));
             if(data.get(i).getColor().equals("yellow")) linearLayout.setBackgroundColor(getResources().getColor(R.color.Yellow));
-            linearLayout.getBackground().setAlpha(220);
+            linearLayout.getBackground().setAlpha(200);
             textView.setText(data.get(i).getDescribe());
             linearLayout.setGravity(Gravity.CENTER);
             Log.i("Table", data.get(i).getDescribe() + "   ");

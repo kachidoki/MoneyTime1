@@ -19,7 +19,6 @@ import com.kachidoki.me.moneytime10.model.ItemModel;
 import com.kachidoki.me.moneytime10.model.bean.ItemBean;
 import com.kachidoki.me.moneytime10.util.MyDatebaseHelper;
 import com.kachidoki.me.moneytime10.util.PopupWindowsUtils;
-import com.kachidoki.me.moneytime10.util.Position;
 import com.kachidoki.me.moneytime10.util.Util;
 
 /**

@@ -18,7 +18,6 @@ import com.kachidoki.me.moneytime10.model.ItemModel;
 import com.kachidoki.me.moneytime10.model.bean.ItemBean;
 import com.kachidoki.me.moneytime10.util.MyDatebaseHelper;
 import com.kachidoki.me.moneytime10.util.PopupWindowsUtils;
-import com.kachidoki.me.moneytime10.util.Position;
 import com.kachidoki.me.moneytime10.util.Util;
 
 /**
@@ -47,7 +46,7 @@ public class ItemAdapter extends RecyclerArrayAdapter<ItemBean> {
     }
 
     @Override
-    public void OnBindViewHolder(final BaseViewHolder holder, int position) {
+    public void OnBindViewHolder(final BaseViewHolder holder, final int position) {
         super.OnBindViewHolder(holder, position);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -59,9 +58,9 @@ public class ItemAdapter extends RecyclerArrayAdapter<ItemBean> {
                     }
 
                     @Override
-                    public void onListItemClickBack(ListPopupWindow popupWindow, View parent, final int position) {
+                    public void onListItemClickBack(ListPopupWindow popupWindow, View parent, final int i) {
                         mpopWindows.dismiss();
-                        switch (position) {
+                        switch (i) {
                             case 0:
                                 Log.i("POP", "删除");
                                 new MaterialDialog.Builder(getContext())
