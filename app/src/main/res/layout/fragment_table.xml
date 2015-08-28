@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:background="@color/White">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -62,115 +63,130 @@
 
         </LinearLayout>
 
-        <ScrollView
+        <com.kachidoki.me.moneytime10.widget.MyScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                android:orientation="vertical">
                     <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="7"
+                        android:id="@+id/datetime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="本周"
                         android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="8"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="9"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="10"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="11"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="12"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="13"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="14"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="15"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="16"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="17"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="18"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="19"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="20"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="21"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="22"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="20dp"
-                        android:layout_height="60dp"
-                        android:text="23"
-                        android:gravity="center"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="7"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="8"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="9"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="10"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="11"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="12"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="13"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="14"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="15"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="16"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="17"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="18"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="19"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="20"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="21"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="22"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="60dp"
+                                android:text="23"
+                                android:gravity="center"/>
 
-                <com.kachidoki.me.moneytime10.widget.Table
-                    android:id="@+id/table"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/White">
+                        </LinearLayout>
 
-                </com.kachidoki.me.moneytime10.widget.Table>
+                        <com.kachidoki.me.moneytime10.widget.Table
+                            android:id="@+id/table"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/White">
+
+                        </com.kachidoki.me.moneytime10.widget.Table>
+
+                    </LinearLayout>
 
             </LinearLayout>
-        </ScrollView>
+
+        </com.kachidoki.me.moneytime10.widget.MyScrollView>
     </LinearLayout>
 
     <Button

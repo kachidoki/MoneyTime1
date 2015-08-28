@@ -10,12 +10,10 @@ import com.kachidoki.me.moneytime10.R;
  * Created by Frank on 15/8/25.
  */
 public class AboutActivity extends AppCompatActivity {
-    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
     }
 }

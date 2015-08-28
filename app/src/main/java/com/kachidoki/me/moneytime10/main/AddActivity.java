@@ -21,6 +21,7 @@ import com.kachidoki.me.moneytime10.util.MyDatebaseHelper;
 import com.kachidoki.me.moneytime10.util.Util;
 import com.kachidoki.me.moneytime10.widget.ColorPicker;
 import com.kachidoki.me.moneytime10.widget.TimePicker;
+import com.kachidoki.me.moneytime10.widget.TimePicker2;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,7 +39,7 @@ public class AddActivity extends AppCompatActivity {
     private TextView time;
     final Calendar currentTime = Calendar.getInstance();
     private ColorPicker colorPicker;
-    private TimePicker timePicker;
+    private TimePicker2 timePicker;
     private EditText describe;
     private TextView calendTime;
     private ButtonRectangle add;
@@ -50,7 +51,7 @@ public class AddActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         time = (TextView) findViewById(R.id.calenderTime);
         colorPicker = (ColorPicker) findViewById(R.id.colorPicker);
-        timePicker = (TimePicker) findViewById(R.id.timePicker);
+        timePicker = (TimePicker2) findViewById(R.id.timePicker);
         describe = (EditText) findViewById(R.id.doSomething);
         add = (ButtonRectangle) findViewById(R.id.addButton);
         calendTime = (TextView) findViewById(R.id.calenderTime);

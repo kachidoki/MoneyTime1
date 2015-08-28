@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.kachidoki.me.moneytime10.R;
 import com.kachidoki.me.moneytime10.model.ItemModel;
@@ -32,6 +33,7 @@ public class Table_Fragment extends Fragment {
     private List<ItemBean> data;
     private int Year=0,Month=0,Day=0,WeekOfYear=0,WeekDay=0;
     private Button left,right;
+    private TextView datetime;
     final Calendar currentTime = Calendar.getInstance();
     @Nullable
     @Override
@@ -41,7 +43,8 @@ public class Table_Fragment extends Fragment {
         table = (Table) view.findViewById(R.id.table);
         left = (Button) view.findViewById(R.id.left);
         right = (Button) view.findViewById(R.id.right);
-
+        datetime = (TextView) view.findViewById(R.id.datetime);
+        datetime.setText("本周是第"+WeekOfYear+"周");
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -41,6 +41,8 @@ public class ItemViewHolder extends BaseViewHolder<ItemBean> {
             tv_endTime.setText(Util.TransformTime(item.getEndTime()));
             tv_describe.setText(item.getDescribe());
             tv_line.setText("—");
+//            jinzhi.setX(Util.dip2px(itemView.getContext(),46));
+//            Log.i("Test",Util.px2dip(itemView.getContext(),jinzhi.getX())+"");
             if(item.getColor().equals("red")) color.setImageResource(R.drawable.icon_round_red);
             if(item.getColor().equals("blue")) color.setImageResource(R.drawable.icon_round_blue);
             if(item.getColor().equals("orange")) color.setImageResource(R.drawable.icon_round_orange);
