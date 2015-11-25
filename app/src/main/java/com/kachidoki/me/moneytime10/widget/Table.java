@@ -112,11 +112,11 @@ public class Table extends FrameLayout {
             linearLayout.getBackground().setAlpha(200);
             textView.setText(data.get(i).getDescribe());
             linearLayout.setGravity(Gravity.CENTER);
-            Log.i("Table", data.get(i).getDescribe() + "   ");
+//            Log.i("Table", data.get(i).getDescribe() + "   ");
             textView.setTextColor(getResources().getColor(R.color.White));
             textView.setTextSize(12);
             textView.setMaxEms(3);
-            Log.i("Table", textView.getGravity() + "gravity---------");
+//            Log.i("Table", textView.getGravity() + "gravity---------");
             textView.setGravity(Gravity.CENTER);
 //            textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 

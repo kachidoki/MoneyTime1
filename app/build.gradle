@@ -8,8 +8,8 @@ android {
         applicationId "com.kachidoki.me.moneytime10"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
     }
     buildTypes {
         release {
@@ -30,6 +30,7 @@ dependencies {
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.afollestad:material-dialogs:0.7.8.1'
+    compile 'com.umeng.analytics:analytics:latest.integration'
     compile project(':MPChartLib')
     compile project(':umeng')
 }

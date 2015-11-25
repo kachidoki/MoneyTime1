@@ -22,6 +22,7 @@ import com.kachidoki.me.moneytime10.util.Util;
 import com.kachidoki.me.moneytime10.widget.ColorPicker;
 import com.kachidoki.me.moneytime10.widget.TimePicker;
 import com.kachidoki.me.moneytime10.widget.TimePicker2;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -107,6 +108,20 @@ public class AddActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     public Boolean isDouble(){

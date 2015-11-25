@@ -20,6 +20,7 @@ import com.kachidoki.me.moneytime10.model.ItemModel;
 import com.kachidoki.me.moneytime10.model.bean.ItemBean;
 import com.kachidoki.me.moneytime10.util.MyDatebaseHelper;
 import com.kachidoki.me.moneytime10.util.Util;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -47,6 +48,21 @@ public class DetilActivity extends AppCompatActivity {
         InitRecyclerView();
         InitAdapter();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
 
     public void InitRecyclerView(){
         DetilAdapter = new DetilAdapter(DetilActivity.this);

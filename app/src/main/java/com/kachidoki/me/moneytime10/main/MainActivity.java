@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.kachidoki.me.moneytime10.R;
+import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 
 import java.util.ArrayList;
@@ -35,8 +36,23 @@ public class MainActivity extends AppCompatActivity {
         Log.i("life", "main_activity is on create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        UmengUpdateAgent.update(MainActivity.this);
+//        UmengUpdateAgent.update(MainActivity.this);
+        UmengUpdateAgent.forceUpdate(MainActivity.this);
         InitViewPager();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override
@@ -58,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this,AboutActivity.class));
             return true;
         }
+//        if (id == R.id.action_update) {
+//            UmengUpdateAgent.forceUpdate(this);
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -81,24 +101,7 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(fragment2);
         fragments.add(fragment3);
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
-        viewPager.setOffscreenPageLimit(1);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                getSupportFragmentManager().getFragments().get(position).onResume();
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
     }
 

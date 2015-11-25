@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.kachidoki.me.moneytime10.R;
+import com.umeng.analytics.AnalyticsConfig;
+import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateConfig;
@@ -32,9 +34,23 @@ public class FirstActivity extends AppCompatActivity implements UmengUpdateListe
         window.setFlags(flag, flag);
         setContentView(R.layout.activity_first);
 
-
+        MobclickAgent.updateOnlineConfig(this);
+        AnalyticsConfig.enableEncrypt(true);
         UpdateConfig.setDebug(true);
         skipActivity(2);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     /**
@@ -57,6 +73,6 @@ public class FirstActivity extends AppCompatActivity implements UmengUpdateListe
 
     @Override
     public void onUpdateReturned(int i, UpdateResponse updateResponse) {
-        Log.i("Umeng",i+"-------------------");
+//        Log.i("Umeng",i+"-------------------");
     }
 }
