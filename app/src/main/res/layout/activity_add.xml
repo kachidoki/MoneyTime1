@@ -52,14 +52,14 @@
         android:id="@+id/doSomething"/>
 
 
-    <com.gc.materialdesign.views.ButtonRectangle
+    <Button
         android:id="@+id/addButton"
         android:layout_marginTop="50dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#1E88E5"
-
+        android:textColor="@color/White"
         android:text="添加事件" />
 
 

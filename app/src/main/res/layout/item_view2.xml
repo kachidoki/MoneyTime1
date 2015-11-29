@@ -11,12 +11,12 @@
         android:orientation="horizontal">
         <TextView
             android:layout_marginLeft="5dp"
-            android:layout_width="40dp"
+            android:layout_width="45dp"
             android:layout_height="60dp"
             android:textSize="10sp"
             android:textColor="@android:color/black"
             android:gravity="center_vertical"
-            android:text=""
+            android:text="11月29日"
             android:id="@+id/time"/>
         <FrameLayout
             android:layout_width="40dp"

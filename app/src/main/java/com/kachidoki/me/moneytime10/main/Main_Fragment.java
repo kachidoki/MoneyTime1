@@ -5,7 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,10 +19,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.gc.materialdesign.views.ButtonFloat;
-import com.gc.materialdesign.widgets.SnackBar;
+//import com.gc.materialdesign.views.ButtonFloat;
+//import com.gc.materialdesign.widgets.SnackBar;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.kachidoki.me.moneytime10.R;
 import com.kachidoki.me.moneytime10.model.ItemModel;
@@ -39,10 +44,11 @@ import java.util.Locale;
  * Created by Frank on 15/8/17.
  */
 public class Main_Fragment extends Fragment {
+    private LinearLayout linearLayout;
     private Toolbar toolbar;
     private ItemAdapter itemAdapter;
     private EasyRecyclerView easyRecyclerView;
-    private ButtonFloat add;
+    private FloatingActionButton add;
     private int Year=0,Month=0,Day=0,WeekOfYear=0,WeekDay=0;
     final Calendar currentTime = Calendar.getInstance();
     private TextView tv_day,tv_year,tv_month,tv_weekday;
@@ -51,12 +57,17 @@ public class Main_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.i("life","main_fragment is on createView");
+        Log.i("life", "main_fragment is on createView");
         View view = inflater.inflate(R.layout.fragment_main,container,false);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        add = (ButtonFloat) view.findViewById(R.id.add);
+        final ActionBar ab = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        ab.setHomeAsUpIndicator(R.drawable.icon_menu);
+        ab.setDisplayHomeAsUpEnabled(true);
+
+        add = (FloatingActionButton) view.findViewById(R.id.add);
         easyRecyclerView = (EasyRecyclerView) view.findViewById(R.id.MyRecyclerview);
+        linearLayout  = (LinearLayout) view.findViewById(R.id.contentView);
         tv_day = (TextView) view.findViewById(R.id.DayTV);
         tv_month = (TextView) view.findViewById(R.id.MonthTV);
         tv_weekday = (TextView) view.findViewById(R.id.weekDayTV);
@@ -106,13 +117,21 @@ public class Main_Fragment extends Fragment {
         Collections.reverse(itemBeans);
         itemAdapter.addAll(itemBeans);
         if (itemBeans.size()==0){
-            SnackBar snackBar = new SnackBar(getActivity(), "本周还没有任何记录，赶快添加吧", "添加", new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(getActivity(), AddActivity.class));
-                }
-            });
-            snackBar.show();
+//            SnackBar snackBar = new SnackBar(getActivity(), "本周还没有任何记录，赶快添加吧", "添加", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    startActivity(new Intent(getActivity(), AddActivity.class));
+//                }
+//            });
+//            snackBar.show();
+
+//            Snackbar.make(linearLayout.getRootView(), "本周还没有任何记录，赶快添加吧", Snackbar.LENGTH_LONG)
+//                    .setAction("添加", new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            startActivity(new Intent(getActivity(), AddActivity.class));
+//                        }
+//                    }).show();
         }
 
 //        SQLiteDatabase db = MyDatebaseHelper.getInstance(getActivity()).getReadableDatabase();
@@ -149,25 +168,25 @@ public class Main_Fragment extends Fragment {
         tv_year.setText(Year+"");
         tv_day.setText(Day+"");
         tv_month.setText(Month+"");
-        if (Month == 1) tv_month.setText("January ");
-        if (Month == 2) tv_month.setText("February");
-        if (Month == 3) tv_month.setText("March   ");
-        if (Month == 4) tv_month.setText("April   ");
-        if (Month == 5) tv_month.setText("May     ");
-        if (Month == 6) tv_month.setText("June    ");
-        if (Month == 7) tv_month.setText("July    ");
-        if (Month == 8) tv_month.setText("August  ");
-        if (Month == 9) tv_month.setText("September");
-        if (Month == 10) tv_month.setText("October ");
-        if (Month == 11) tv_month.setText("November");
-        if (Month == 12) tv_month.setText("December");
-        if (WeekDay == 2) tv_weekday.setText("Monday   ");
-        if (WeekDay == 3) tv_weekday.setText("Tuesday  ");
-        if (WeekDay == 4) tv_weekday.setText("Wednesday");
-        if (WeekDay == 5) tv_weekday.setText("Thursday ");
-        if (WeekDay == 6) tv_weekday.setText("Friday   ");
-        if (WeekDay == 7) tv_weekday.setText("Saturday ");
-        if (WeekDay == 1) tv_weekday.setText("Sunday   ");
+        if (Month == 1) tv_month.setText("一月");
+        if (Month == 2) tv_month.setText("二月");
+        if (Month == 3) tv_month.setText("三月");
+        if (Month == 4) tv_month.setText("四月");
+        if (Month == 5) tv_month.setText("五月");
+        if (Month == 6) tv_month.setText("六月");
+        if (Month == 7) tv_month.setText("七月");
+        if (Month == 8) tv_month.setText("八月");
+        if (Month == 9) tv_month.setText("九月");
+        if (Month == 10) tv_month.setText("十月");
+        if (Month == 11) tv_month.setText("十一月");
+        if (Month == 12) tv_month.setText("十二月");
+        if (WeekDay == 2) tv_weekday.setText("星期一");
+        if (WeekDay == 3) tv_weekday.setText("星期二");
+        if (WeekDay == 4) tv_weekday.setText("星期三");
+        if (WeekDay == 5) tv_weekday.setText("星期四");
+        if (WeekDay == 6) tv_weekday.setText("星期五");
+        if (WeekDay == 7) tv_weekday.setText("星期六");
+        if (WeekDay == 1) tv_weekday.setText("星期日");
         Log.i("day",WeekDay+"");
     }
 

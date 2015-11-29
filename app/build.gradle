@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 3
-        versionName "1.2"
+        versionName "1.2.1bate"
     }
     buildTypes {
         release {
@@ -24,13 +24,19 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.jude:easyrecyclerview:1.0.3'
-    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+    //    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.afollestad:material-dialogs:0.7.8.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.android.support:design:22.2.0'
+    compile 'cn.bmob.android:bmob-sdk:3.4.5'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okio:okio:1.4.0'
+    compile 'com.jude:utils:1.0.7'
     compile project(':MPChartLib')
     compile project(':umeng')
+    compile project(':smsssdk')
 }

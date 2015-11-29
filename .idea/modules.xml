@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/MoneyTime1.0.iml" filepath="$PROJECT_DIR$/MoneyTime1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smsssdk/smsssdk.iml" filepath="$PROJECT_DIR$/smsssdk/smsssdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />
     </modules>
   </component>

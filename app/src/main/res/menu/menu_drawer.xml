@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add"
+            android:icon="@drawable/icon_shijian"
+            android:title="时间轴"/>
+        <item
+            android:id="@+id/nav_time"
+            android:icon="@drawable/icon_rongzi"
+            android:title="统计图"/>
+        <item
+            android:id="@+id/nav_week"
+            android:icon="@drawable/icon_rill1"
+            android:title="周表"/>
+
+    </group>
+    <item android:title="通用">
+        <menu>
+            <item
+                android:title="数据同步"
+                android:icon="@drawable/icon_tongbu"/>
+            <item
+                android:id="@+id/logout"
+                android:title="注销"
+                android:icon="@drawable/icon_tuichu"/>
+        </menu>
+    </item>
+</menu>

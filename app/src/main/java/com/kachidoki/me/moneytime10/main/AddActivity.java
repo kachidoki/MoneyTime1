@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.ButtonRectangle;
+//import com.gc.materialdesign.views.ButtonRectangle;
 import com.kachidoki.me.moneytime10.R;
 import com.kachidoki.me.moneytime10.model.ItemModel;
 import com.kachidoki.me.moneytime10.model.bean.ItemBean;
@@ -43,7 +43,7 @@ public class AddActivity extends AppCompatActivity {
     private TimePicker2 timePicker;
     private EditText describe;
     private TextView calendTime;
-    private ButtonRectangle add;
+    private Button add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +54,7 @@ public class AddActivity extends AppCompatActivity {
         colorPicker = (ColorPicker) findViewById(R.id.colorPicker);
         timePicker = (TimePicker2) findViewById(R.id.timePicker);
         describe = (EditText) findViewById(R.id.doSomething);
-        add = (ButtonRectangle) findViewById(R.id.addButton);
+        add = (Button) findViewById(R.id.addButton);
         calendTime = (TextView) findViewById(R.id.calenderTime);
 
         SetChinaTime(currentTime);

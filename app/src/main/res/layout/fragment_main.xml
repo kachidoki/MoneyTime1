@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/contentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White">
@@ -26,7 +27,7 @@
             android:layout_height="match_parent">
 
                 <View
-                    android:layout_marginLeft="78dp"
+                    android:layout_marginLeft="82.5dp"
                     android:background="@color/Gray"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -45,18 +46,16 @@
 
         </LinearLayout>
 
-        <com.gc.materialdesign.views.ButtonFloat
+        <android.support.design.widget.FloatingActionButton
             android:layout_gravity="right"
-            android:layout_marginTop="185dp"
+            android:layout_marginTop="152dp"
             android:id="@+id/add"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
-            android:background="@android:color/holo_red_light"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/icon_add" />
+            android:clickable="true"
+            android:src="@drawable/icon_add"
+             />
 
         <TextView
             android:id="@+id/weekDayTV"
